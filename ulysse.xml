@@ -17,17 +17,6 @@
     <remove-project name="vendor_qcom_opensource_system_bt" /> 
     <remove-project name="vendor_qcom_opensource_packages_apps_Bluetooth" />
     <remove-project name="vendor_qcom_opensource_bluetooth_ext" />
-    
-    <!-- Custom NFC Repos -->
-    <remove-project name="vendor_nxp_interfaces_opensource_nfc" />
-    <remove-project name="vendor_nxp_opensource_external_libnfc-nci" />
-    <remove-project name="vendor_nxp_opensource_sn100x_halimpl" />
-    <remove-project name="vendor_nxp_opensource_pn5xx_halimpl" />
-    <remove-project name="packages_apps_Nfc" />
-    <remove-project name="vendor_nxp_opensource_frameworks" />    
-    <remove-project name="vendor_nxp_opensource_packages_apps_Nfc" />
-    <remove-project name="vendor_nxp_opensource_sn100x_hidlimpl" />
-    <remove-project name="vendor_nxp_opensource_pn5xx_hidlimpl" />
 
     <project path="packages/apps/Nfc" name="ArrowOS/android_packages_apps_Nfc" remote="github" revision="arrow-12.0" />
     <project path="vendor/nxp/opensource/interfaces/nfc" name="ArrowOS/android_vendor_nxp_interfaces_opensource_nfc" remote="github" revision="arrow-12.0" />
