@@ -12,20 +12,25 @@
     <project name="mi-msm8937/android_kernel_xiaomi_msm8937" path="kernel/xiaomi/msm8937" remote="github" revision="a12/master" clone-depth="1" />
     <project name="ThankYouMario/proprietary_vendor_qcom_sdclang" path="prebuilts/clang/host/linux-x86/clang-sdllvm" remote="github" revision="ruby-12" clone-depth="1" />
 
-    <!-- QTI Bluetooth Repos -->
-    <remove-project name="vendor_qcom_opensource_bluetooth-commonsys-intf" />
-    <remove-project name="vendor_qcom_opensource_system_bt" /> 
-    <remove-project name="vendor_qcom_opensource_packages_apps_Bluetooth" />
-    <remove-project name="vendor_qcom_opensource_bluetooth_ext" />
-
-    <project path="packages/apps/Nfc" name="ArrowOS/android_packages_apps_Nfc" remote="github" revision="arrow-12.0" />
-    <project path="vendor/nxp/opensource/interfaces/nfc" name="ArrowOS/android_vendor_nxp_interfaces_opensource_nfc" remote="github" revision="arrow-12.0" />
-    <project path="vendor/nxp/opensource/commonsys/external/libnfc-nci" name="ArrowOS/android_vendor_nxp_opensource_external_libnfc-nci" remote="github" revision="arrow-12.0" />
-    <project path="vendor/nxp/opensource/commonsys/frameworks" name="ArrowOS/android_vendor_nxp_opensource_frameworks" remote="github" revision="arrow-12.0" />
-    <project path="vendor/nxp/opensource/commonsys/packages/apps/Nfc" name="ArrowOS/android_vendor_nxp_opensource_packages_apps_Nfc" remote="github" revision="arrow-12.0" />
-    <project path="vendor/nxp/opensource/sn100x/halimpl" name="ArrowOS/android_vendor_nxp_opensource_halimpl" remote="github" revision="arrow-12.0-sn100x" />
-    <project path="vendor/nxp/opensource/sn100x/hidlimpl" name="ArrowOS/android_vendor_nxp_opensource_hidlimpl" remote="github" revision="arrow-12.0-sn100x" />
-    <project path="vendor/nxp/opensource/pn5xx/halimpl" name="ArrowOS/android_vendor_nxp_opensource_halimpl" remote="github" revision="arrow-12.0-pn5xx" />
-    <project path="vendor/nxp/opensource/pn5xx/hidlimpl" name="ArrowOS/android_vendor_nxp_opensource_hidlimpl" remote="github" revision="arrow-12.0-pn5xx" />
-
+     <!-- Custom Repos -->
+     <remove-project name="frameworks_base" />
+     <remove-project name="packages_apps_Settings" />
+     <remove-project name="vendor_aosp" />
+     <remove-project name="build" />
+     <remove-project name="device_qcom_sepolicy_vndr" />
+     <project path="frameworks/base" name="PixelOS-Pixelish/frameworks_base" remote="github" revision="twelve" />
+     <project path="packages/apps/Settings" name="PixelOS-Pixelish/packages_apps_Settings" remote="github" revision="twelve" />
+     <project path="vendor/aosp" name="PixelOS-Pixelish/vendor_aosp" remote="github" revision="twelve" />
+     <project path="device/qcom/sepolicy_vndr" name="PixelOS-Pixelish/device_qcom_sepolicy_vndr" remote="github" revision="twelve"/>
+    
+     <project path="build/make" name="PixelOS-Pixelish/build" remote="github" revision="twelve">
+      <copyfile src="core/root.mk" dest="Makefile" />
+      <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+      <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+      <linkfile src="core" dest="build/core" />
+      <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+      <linkfile src="target" dest="build/target" />
+      <linkfile src="tools" dest="build/tools" />
+     </project>
+    
 </manifest>
