@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <!-- Device Trees -->
+    <project name="danyscape/android_device_xiaomi_ulysse" path="device/xiaomi/ulysse" remote="github" revision="pixel" />
+    <project name="mi-msm8937/android_device_xiaomi_msm8937-common" path="device/xiaomi/msm8937-common" remote="github" revision="twelve" />
+
+    <!-- Vendor -->
+    <project name="mi-msm8937/proprietary_vendor_xiaomi_ulysse" path="vendor/xiaomi/ulysse" remote="github" revision="lineage-18.1" />
+    <project name="danyscape/proprietary_vendor_xiaomi_msm8937-common" path="vendor/xiaomi/msm8937-common" remote="github" revision="temp" />
+
+    <!-- Kernel tree and clang -->
+    <project name="mi-msm8937/android_kernel_xiaomi_msm8937" path="kernel/xiaomi/msm8937" remote="github" revision="a12/master" clone-depth="1" />
+    <project name="ThankYouMario/proprietary_vendor_qcom_sdclang" path="prebuilts/clang/host/linux-x86/clang-sdllvm" remote="github" revision="ruby-12" clone-depth="1" />
+
+    <!-- QTI Bluetooth Repos -->
+    <remove-project name="vendor_qcom_opensource_bluetooth-commonsys-intf" />
+    <remove-project name="vendor_qcom_opensource_system_bt" /> 
+    <remove-project name="vendor_qcom_opensource_packages_apps_Bluetooth" />
+    <remove-project name="vendor_qcom_opensource_bluetooth_ext" />
+    
+    <!-- Custom NFC Repos -->
+    <remove-project name="vendor_nxp_interfaces_opensource_nfc" />
+    <remove-project name="vendor_nxp_opensource_external_libnfc-nci" />
+    <remove-project name="vendor_nxp_opensource_sn100x_halimpl" />
+    <remove-project name="vendor_nxp_opensource_pn5xx_halimpl" />
+    <remove-project name="packages_apps_Nfc" />
+    <remove-project name="vendor_nxp_opensource_frameworks" />    
+    <remove-project name="vendor_nxp_opensource_packages_apps_Nfc" />
+    <remove-project name="vendor_nxp_opensource_sn100x_hidlimpl" />
+    <remove-project name="vendor_nxp_opensource_pn5xx_hidlimpl" />
+
+    <project path="packages/apps/Nfc" name="ArrowOS/android_packages_apps_Nfc" remote="github" revision="arrow-12.0" />
+    <project path="vendor/nxp/opensource/interfaces/nfc" name="ArrowOS/android_vendor_nxp_interfaces_opensource_nfc" remote="github" revision="arrow-12.0" />
+    <project path="vendor/nxp/opensource/commonsys/external/libnfc-nci" name="ArrowOS/android_vendor_nxp_opensource_external_libnfc-nci" remote="github" revision="arrow-12.0" />
+    <project path="vendor/nxp/opensource/commonsys/frameworks" name="ArrowOS/android_vendor_nxp_opensource_frameworks" remote="github" revision="arrow-12.0" />
+    <project path="vendor/nxp/opensource/commonsys/packages/apps/Nfc" name="ArrowOS/android_vendor_nxp_opensource_packages_apps_Nfc" remote="github" revision="arrow-12.0" />
+    <project path="vendor/nxp/opensource/sn100x/halimpl" name="ArrowOS/android_vendor_nxp_opensource_halimpl" remote="github" revision="arrow-12.0-sn100x" />
+    <project path="vendor/nxp/opensource/sn100x/hidlimpl" name="ArrowOS/android_vendor_nxp_opensource_hidlimpl" remote="github" revision="arrow-12.0-sn100x" />
+    <project path="vendor/nxp/opensource/pn5xx/halimpl" name="ArrowOS/android_vendor_nxp_opensource_halimpl" remote="github" revision="arrow-12.0-pn5xx" />
+    <project path="vendor/nxp/opensource/pn5xx/hidlimpl" name="ArrowOS/android_vendor_nxp_opensource_hidlimpl" remote="github" revision="arrow-12.0-pn5xx" />
+
+    <remove-project name="hardware_qcom-caf_common" />
+    
+    <!-- hardware repos -->
+    <project path="hardware/qcom-caf/common" name="ArrowOS/android_hardware_qcom-caf_common" remote="github" revision="arrow-12.0">
+    <!-- add guard for AOSP hardware/qcom dir -->
+    <linkfile src="os_pickup_aosp.mk" dest="hardware/qcom/Android.mk" />
+    <!-- for AOSP sdm845 and sm8150, we override os_pickup.mk -->
+    <linkfile src="os_pickup.mk" dest="hardware/qcom/sdm845/Android.mk" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom/sm8150/Android.mk" />
+    <!-- add guards for CAF repositories -->
+    <linkfile src="os_pickup.bp" dest="hardware/qcom-caf/msm8998/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8998/Android.mk" />
+    <linkfile src="os_pickup.bp" dest="hardware/qcom-caf/msm8996-r/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8996-r/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sdm660/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sdm660/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sdm845/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sdm845/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8150/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8150/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8250/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8250/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8350/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8350/Android.mk" />
+    <linkfile src="os_pickup.bp" dest="hardware/nxp/Android.bp" />
+    <linkfile src="os_pickup.bp" dest="vendor/nxp/opensource/pn5xx/Android.bp" />
+    <linkfile src="os_pickup.bp" dest="vendor/nxp/opensource/pn5xx/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="vendor/nxp/opensource/pn5xx/Android.mk" />
+    <linkfile src="os_pickup.bp" dest="vendor/nxp/opensource/sn100x/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="vendor/nxp/opensource/sn100x/Android.mk" />
+  </project>
+
+</manifest>
