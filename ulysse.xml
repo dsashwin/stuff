@@ -22,6 +22,7 @@
      <project path="packages/apps/Settings" name="PixelOS-Pixelish/packages_apps_Settings" remote="github" revision="twelve" />
      <project path="vendor/aosp" name="PixelOS-Pixelish/vendor_aosp" remote="github" revision="twelve" />
      <project path="device/qcom/sepolicy_vndr" name="PixelOS-Pixelish/device_qcom_sepolicy_vndr" remote="github" revision="twelve"/>
+     <project path="vendor/overlays" name="PixelOS-Pixelish/vendor_custom_overlay" remote="github" revision="twelve" />
     
      <project path="build/make" name="PixelOS-Pixelish/build" remote="github" revision="twelve">
       <copyfile src="core/root.mk" dest="Makefile" />
