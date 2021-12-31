@@ -16,4 +16,7 @@
     <remove-project name="packages_resources_devicesettings" />
     <project name="LineageOS/android_packages_resources_devicesettings" path="packages/resources/devicesettings" remote="github" revision="lineage-19.0" />
 
+    <!-- Custom Repos -->
+    <remove-project name="system_libhwbinder" />
+    <project name="dsashwin/system_libhwbinder" path="system/libhwbinder" remote="github" revision="twelve" />
 </manifest>
